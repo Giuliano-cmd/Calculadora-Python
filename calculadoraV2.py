@@ -6,18 +6,18 @@ import time
 #Programa principal#
 os.system ("cls")
 print("---------------------")
-pantalla = str(input(""))
+calculo = str(input(""))
 # print("---------------------\n" + pantalla + "\n---------------------")
-i = 1
-var = pantalla.split()
-resultado = int(var[0])
+i = 0
+resultado = 0
+numeroTemp = ""
 #print (var)
-while i < len(var):
-    if var[i] == "+":
-        resultado = resultado + int(var[i+1])
-    elif var[i] == "-":
-        resultado = resultado - int(var[i+1])
+while i < len(calculo):
+    if calculo[i].isdecimal():
+        numeroTemp = numeroTemp + calculo[i]
+        print(numeroTemp)
     else:
-        pass
+        resultado = resultado + int(numeroTemp)
+        numeroTemp = ""
     i = i+1
 print("Resultado: " + str(resultado))
